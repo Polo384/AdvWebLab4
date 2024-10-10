@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 70%;
+            margin: 0 auto;
+            background-color: rgb(70, 147, 255);
+        }
+        section {
+            width: 65%;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            background-color: rgb(133, 133, 133);
+        }
+        .wrapper, section {
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .go {
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        a:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 id="top">Basic Geometry</h1>
+        <p>In this section, we are going to find the Area of some two-dimension shapes</p>
+        <p>You can click on any shape below:</p>
+        <ul>
+            <li><a href="#circle">Circle</a></li>
+            <li><a href="#triangle">Triangle</a></li>
+            <li><a href="#square">Square</a></li>
+            <li><a href="#rectangle">Rectangle</a></li>
+        </ul>
+        <section id="circle">
+            <h2>Circle Area</h2>
+            <div>
+                <label for="circle-radius">Enter the value of the circle's <span class="bold">radius</span>:</label>
+                <input type="text" id="circle-radius">
+            </div>
+            <div>
+                <label for="circle-area" class="bold">Result:</label>
+                <input type="text" id="circle-area" readonly>
+            </div>
+            <hr>
+            <button id="calculate-circle" onclick="getCircleArea()">Calculate</button>
+        </section>
+        <div class="go">
+            <a href="#top">Go to top</a>
+        </div>
+        <section id="triangle">
+            <h2>Triangle Area</h2>
+            <div>
+                <label for="triangle-base">Enter the value of the triangle's <span class="bold">base</span>:</label>
+                <input type="text" id="triangle-base">
+            </div>
+            <div>
+                <label for="triangle-height">Enter the value of the triangle's <span class="bold">height</span>:</label>
+                <input type="text" id="triangle-height">
+            </div>
+            <div>
+                <label for="triangle-area" class="bold">Result:</label>
+                <input type="text" id="triangle-area" readonly>
+            </div>
+            <hr>
+            <button id="calculate-triangle" onclick="getTriangleArea()">Calculate</button>
+        </section>
+        <div class="go">
+            <a href="#top">Go to top</a>
+        </div>
+        <section>
+            <h2>Square Area</h2>
+            <div>
+                <label for="square-side">Enter the value of the square's <span class="bold">side</span>:</label>
+                <input type="text" id="square-side">
+            </div>
+            <div>
+                <label for="square-area" class="bold">Result:</label>
+                <input type="text" id="square-area" readonly>
+            </div>
+            <hr>
+            <button id="calculate-square" onclick="getSquareArea()">Calculate</button>
+        </section>
+        <div class="go">
+            <a href="#top">Go to top</a>
+        </div>
+        <section>
+            <h2>Rectangle Area</h2>
+            <div>
+                <label for="rectangle-length">Enter the value of the rectangle's <span class="bold">length</span>:</label>
+                <input type="text" id="rectangle-length">
+            </div>
+            <div>
+                <label for="rectangle-width">Enter the value of the rectangle's <span class="bold">width</span>:</label>
+                <input type="text" id="rectangle-width">
+            </div>
+            <div>
+                <label for="rectangle-area" class="bold">Result:</label>
+                <input type="text" id="rectangle-area" readonly>
+            </div>
+            <hr>
+            <button id="calculate-rectangle" onclick="getRectangleArea()">Calculate</button>
+        </section>
+        <div class="go">
+            <a href="#top">Go to top</a>
+        </div>
+    </div>
+    <script>
+        getCircleArea = () => {
+            const radius = document.getElementById('circle-radius').value;
+            const area = Math.PI * Math.pow(radius, 2);
+            document.getElementById('circle-area').value = area.toFixed(2);
+        }
+        getTriangleArea = () => {
+            const base = document.getElementById('triangle-base').value;
+            const height = document.getElementById('triangle-height').value;
+            const area = 0.5 * base * height;
+            document.getElementById('triangle-area').value = area;
+        }
+        getSquareArea = () => {
+            const side = document.getElementById('square-side').value;
+            const area = Math.pow(side, 2);
+            document.getElementById('square-area').value = area;
+        }
+        getRectangleArea = () => {
+            const length = document.getElementById('rectangle-length').value;
+            const width = document.getElementById('rectangle-width').value;
+            const area = length * width;
+            document.getElementById('rectangle-area').value = area;
+        }
+    </script>
+</body>
+</html>
